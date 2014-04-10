@@ -1,4 +1,8 @@
+# import appropriate modules
+
 import random
+
+# defines number to name conversion, and vice-versa
 
 def name_to_number(name):
     """ Assigns each number to a name """
@@ -29,6 +33,8 @@ def number_to_name(number):
         return "scissors"
     else:
         return "You haven't chosen a number!"
+
+# the core of the game, randomly selects a guess for computer
 
 def rpsls(player_guess): 
     """ Determines who's the winner, then prints it """
@@ -68,7 +74,8 @@ def rpsls(player_guess):
     else:
         print "Don't know, this shouldn't be happening!"
     
-# test your code
+# five different player tests to compare to computer choices
+
 rpsls("rock")
 rpsls("Spock")
 rpsls("paper")
