@@ -6,6 +6,8 @@
 
 import simplegui
 
+# starts message
+
 message = "My first frame!"
 
 # Handler for mouse click
