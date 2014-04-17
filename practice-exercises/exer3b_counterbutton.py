@@ -6,7 +6,6 @@
 import simplegui 
 
 counter = 0
-interval = 1000
 
 # Timer handler
 def tick():
@@ -15,26 +14,23 @@ def tick():
     counter += 1
     
 # Event handlers for buttons    
+def start():
+    timer.start()
+    
+def stop():
+    timer.stop()
 
-def reset_handler():
+def reset():
     global counter
     counter = 0
-    timer.start()
-
-def start_handler():
-    timer.start()
-    
-def stop_handler():
-    timer.stop()
-    
+        
 # Create frame and timer
 frame = simplegui.create_frame("Counter with buttons", 200, 200)
-timer = simplegui.create_timer(interval, tick)
-
-# add buttons to frame
-reset = frame.add_button("Restart", reset_handler, 50)
-start = frame.add_button("Start", start_handler, 50)
-stop = frame.add_button("Stop", stop_handler, 50)
+frame.add_button("Start", start, 100)
+frame.add_button("Stop", stop, 100)
+frame.add_button("Reset", reset, 100)
+timer = simplegui.create_timer(1000, tick)
 
 # Start timer
+frame.start()
 timer.start()
